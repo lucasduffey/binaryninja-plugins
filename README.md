@@ -6,7 +6,7 @@ Repository to track Binary Ninja Plugins, Themes, and other related tools
 
 Binary Ninja plugins are available in different channels. Currently, there are two channels:
 
- - [Official](plugins/official): The official channel includes plugins written directly by [Vector 35](https://vector35.com/) or written by a third-party and verified by Vector 35. While we cannot guarantee they are bug-free, we have at least done our best to ensure they user best-practices for plugin writing and provide useful functionality.
+ - [Official](plugins/official): The official channel includes plugins written directly by [Vector 35](https://vector35.com/) or written by a third-party and verified by Vector 35. We have at least done our best to ensure they use the current plugin writing best-practices and provide useful functionality.
 
  - [Community](plugins/community): The community channel includes plugins written by third-parties that are not verified for quality, safety, or efficacy.  
 
@@ -21,10 +21,6 @@ To install plugins, you can either clone this repository, or clone the specific 
 ### Contributing Plugins
 
 To add your plugin to this repository, please first make sure that it parses properly using the [generate_index.py](generate_index.py) and then issue a pull request adding your plugin as a submodule, or file a new [issue](/../../issues/new).
-
-## Themes
-
-Placeholder until [this issue](https://github.com/Vector35/binaryninja-api/issues/207) is closed out.
 
 ## License
 
