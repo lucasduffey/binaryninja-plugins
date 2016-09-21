@@ -15,6 +15,10 @@ os.path.realpath(__file__)
 basedir=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'plugins')
 outputfile = os.path.join(basedir, 'README.md')
 
+if not args.force and os.path.isfile(outputfile):
+	print("Cowardly refusing to overwrite an existing index.")
+	sys.exit(0)
+
 #channels = glob.glob(os.path.join(basedir,"*"))
 channels = os.walk(basedir).next()[1]
 
@@ -37,4 +41,4 @@ for channel in ['core', 'community']: #because otherwise it's alphabetical
 					license = data['license']['name'], description = data['description'])
 	template += "\n\n"
 
-print template
+open(outputfile, 'w').write(template)
