@@ -24,7 +24,7 @@ channels = os.walk(basedir).next()[1]
 
 template = '# Binary Ninja Plugins\n\n'
 
-for channel in ['core', 'community']: #because otherwise it's alphabetical
+for channel in ['official', 'community']: #because otherwise it's alphabetical
 	if channel.startswith('.'):
 		continue
 

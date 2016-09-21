@@ -6,13 +6,13 @@ Repository to track Binary Ninja Plugins, Themes, and other related tools
 
 Binary Ninja plugins are available in different channels. Currently, there are two channels:
 
- - [Core](plugins/core): The core channel includes plugins written directly by [Vector 35](https://vector35.com/) or written by a third-party and verified by Vector 35. While we cannot guarantee they are bug-free, we have at least done our best to ensure they user best-practices for plugin writing and provide useful functionality.
+ - [Official](plugins/official): The official channel includes plugins written directly by [Vector 35](https://vector35.com/) or written by a third-party and verified by Vector 35. While we cannot guarantee they are bug-free, we have at least done our best to ensure they user best-practices for plugin writing and provide useful functionality.
 
  - [Community](plugins/community): The community channel includes plugins written by third-parties that are not verified for quality, safety, or efficacy.  
 
  - [Combined](plugins/): A combined list of all plugins.
 
-A [sample plugin](plugins/core/sample_plugin/) is available to demonstrate the required format for plugins.
+A [sample plugin](plugins/official/sample_plugin/) is available to demonstrate the required format for plugins.
 
 ### Installing Plugins
 
