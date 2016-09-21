@@ -36,9 +36,10 @@ for channel in ['core', 'community']: #because otherwise it's alphabetical
 
 	for plugin in os.walk(os.path.join(basedir,channel)).next()[1]:
 		data = json.load(open(os.path.join(basedir,channel,plugin,"plugin.json")))['plugin']
-		template += '|[{name}](plugins/{channel}/{plugin})|{author}|[{license}](plugins/{channel}/{plugin}/LICENSE)|{description}|\n'.format(name = data['name'], channel = channel,
+		template += '|[{name}]({channel}/{plugin})|{author}|[{license}]({channel}/{plugin}/LICENSE)|{description}|\n'.format(name = data['name'], channel = channel,
 					plugin = plugin, author = data['author'],
 					license = data['license']['name'], description = data['description'])
 	template += "\n\n"
 
+print("Writing {outputfile}".format(outputfile=outputfile))
 open(outputfile, 'w').write(template)
