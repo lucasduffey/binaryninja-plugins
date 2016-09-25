@@ -11,5 +11,6 @@
 
 | PluginName | Author | License | Description |
 |------------|--------|---------|-------------|
+|[Smali Plugin](https://github.com/lucasduffey/smaliBinja-python)|Lucas Duffey||Extracts dex from APK and dissembles into smali bytecode.|
 
 
