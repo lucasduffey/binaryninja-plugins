@@ -1,0 +1,3 @@
+[submodule "plugins/community/smaliBinja_python"]
+	path = plugins/community/smaliBinja_python
+	url = https://github.com/lucasduffey/smaliBinja_python
