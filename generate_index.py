@@ -16,7 +16,7 @@ basedir=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'plugins')
 outputfile = os.path.join(basedir, 'README.md')
 
 if not args.force and os.path.isfile(outputfile):
-	print("Cowardly refusing to overwrite an existing index.")
+	print("Cowardly refusing to overwrite an existing README. Remove or re-run with -f.")
 	sys.exit(0)
 
 #channels = glob.glob(os.path.join(basedir,"*"))
@@ -25,6 +25,13 @@ channels = os.walk(basedir).next()[1]
 template = '# Binary Ninja Plugins\n\n'
 
 for channel in ['official', 'community']: #because otherwise it's alphabetical
+	index = os.path.join(basedir,channel+".json")
+	if os.path.isfile(index):
+		print("Cowardly refusing to overwrite an existing index. Remove or re-run with -f.")
+		sys.exit(0)
+
+	plugins = []
+
 	if channel.startswith('.'):
 		continue
 
@@ -36,10 +43,13 @@ for channel in ['official', 'community']: #because otherwise it's alphabetical
 
 	for plugin in os.walk(os.path.join(basedir,channel)).next()[1]:
 		data = json.load(open(os.path.join(basedir,channel,plugin,"plugin.json")))['plugin']
+		plugins.append(data)
 		template += '|[{name}]({channel}/{plugin})|{author}|[{license}]({channel}/{plugin}/LICENSE)|{description}|\n'.format(name = data['name'], channel = channel,
-					plugin = plugin, author = data['author'],
-					license = data['license']['name'], description = data['description'])
+			plugin = plugin, author = data['author'],
+			license = data['license']['name'], description = data['description'])
 	template += "\n\n"
+	print("Writing {outputfile}".format(outputfile=index))
+	open(index, 'w').write(json.dumps(plugins))
 
 print("Writing {outputfile}".format(outputfile=outputfile))
 open(outputfile, 'w').write(template)
