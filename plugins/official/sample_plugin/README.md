@@ -1,5 +1,6 @@
 # Sample Plugin (v1.0 alpha)
 Author: **Vector 35 LLC**
+
 _This is a short description meant to fit on one line._
 
 ## Description:
