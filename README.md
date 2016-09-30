@@ -20,7 +20,13 @@ To install plugins, you can either clone this repository, or clone the specific 
 
 ### Contributing Plugins
 
-To add your plugin to this repository, please first make sure that it parses properly using the [generate_index.py](generate_index.py) and then issue a pull request adding your plugin as a submodule, or file a new [issue](/../../issues/new).
+ 1. Create a new repository (Optionally, just copy it from the [sample plugin](plugins/official/sample_plugin/))
+ 1. Fill out a [`plugin.json`](/Vector35/binaryninja-plugins/blob/master/plugins/official/sample_plugin/plugin.json)
+ 1. (Optional) Run `generate-readme.md` to update your readme and license 
+ 1. Fork this repository
+ 1. Add your plugin as a submodule: `git submodule add https://github.com/YourName/YourPlugin plugins/community/YourPlugin`
+ 1. Regenerate the plugin directory with `generate-index.py`
+ 1. Commit and issue a [pull request](/Vector35/binaryninja-plugins/pull/new/master)
 
 ## License
 
