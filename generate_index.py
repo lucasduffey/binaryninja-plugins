@@ -26,7 +26,7 @@ template = '# Binary Ninja Plugins\n\n'
 
 for channel in ['official', 'community']: #because otherwise it's alphabetical
 	index = os.path.join(basedir,channel+".json")
-	if os.path.isfile(index):
+	if not args.force and os.path.isfile(index):
 		print("Cowardly refusing to overwrite an existing index. Remove or re-run with -f.")
 		sys.exit(0)
 
