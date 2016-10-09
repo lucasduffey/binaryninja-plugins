@@ -11,6 +11,7 @@
 
 | PluginName | Author | License | Description |
 |------------|--------|---------|-------------|
+|[Binjatron](community/binjatron)|snare|[MIT](community/binjatron/LICENSE)|Synchronise the Binary Ninja binary view with a debugger via Voltron.|
 |[Smali Architecture Plugin](community/smaliBinja_python)|Lucas Duffey|[MIT](community/smaliBinja_python/LICENSE)|Extracts dex from APK, and dissembles into Smalli bytecode.|
 
 

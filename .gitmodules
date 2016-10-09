@@ -1,3 +1,6 @@
 [submodule "plugins/community/smaliBinja_python"]
 	path = plugins/community/smaliBinja_python
 	url = https://github.com/lucasduffey/smaliBinja_python
+[submodule "plugins/community/binjatron"]
+	path = plugins/community/binjatron
+	url = https://github.com/snare/binjatron
