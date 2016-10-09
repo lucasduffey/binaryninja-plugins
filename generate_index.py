@@ -3,6 +3,7 @@ import json
 import argparse
 import os
 import sys
+import configparser
 
 parser = argparse.ArgumentParser(description = 'Generate README.md index of all plugins')
 parser.add_argument("-f", "--force", help = 'will automatically overwrite existing README', action='store_true')
@@ -24,6 +25,14 @@ channels = os.walk(basedir).next()[1]
 
 template = '# Binary Ninja Plugins\n\n'
 
+config = configparser.ConfigParser()
+config.readfp(open(os.path.join(basedir, '..', '.gitmodules')))
+submodules={}
+
+for section in config.items()[1:]:
+	sectionname = section[0].split('"')[1]
+	submodules[sectionname] = config.get(section[0], 'url')
+
 for channel in ['official', 'community']: #because otherwise it's alphabetical
 	index = os.path.join(basedir,channel+".json")
 	if not args.force and os.path.isfile(index):
@@ -42,10 +51,17 @@ for channel in ['official', 'community']: #because otherwise it's alphabetical
 '''
 
 	for plugin in os.walk(os.path.join(basedir,channel)).next()[1]:
+		try:
+			url = submodules[os.path.join('plugins', channel, plugin)]
+                        if url.endswith('.git'):
+                            url = url[:-4]
+		except:
+                    url = 'https://github.com/Vector35/binaryninja-plugins/tree/master/plugins/{channel}/{plugin}'.format(channel = channel, plugin = plugin)
 		data = json.load(open(os.path.join(basedir,channel,plugin,"plugin.json")))['plugin']
+                data['url'] = url
 		plugins.append(data)
-		template += '|[{name}]({channel}/{plugin})|{author}|[{license}]({channel}/{plugin}/LICENSE)|{description}|\n'.format(name = data['name'], channel = channel,
-			plugin = plugin, author = data['author'],
+		template += '|[{name}]({url})|{author}|[{license}]({channel}/{plugin}/LICENSE)|{description}|\n'.format(name = data['name'], channel = channel,
+			url = url, plugin = plugin, author = data['author'],
 			license = data['license']['name'], description = data['description'])
 	template += "\n\n"
 	print("Writing {outputfile}".format(outputfile=index))
