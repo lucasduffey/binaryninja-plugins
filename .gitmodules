@@ -4,3 +4,9 @@
 [submodule "plugins/community/binjatron"]
 	path = plugins/community/binjatron
 	url = https://github.com/snare/binjatron
+[submodule "plugins/community/binaryninja-msp430"]
+	path = plugins/community/binaryninja-msp430
+	url = https://github.com/joshwatson/binaryninja-msp430.git
+[submodule "plugins/community/binaryninja-bookmarks"]
+	path = plugins/community/binaryninja-bookmarks
+	url = https://github.com/joshwatson/binaryninja-bookmarks.git
