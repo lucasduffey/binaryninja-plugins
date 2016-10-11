@@ -13,6 +13,8 @@
 |------------|--------|---------|-------------|
 |[Bookmarks](https://github.com/joshwatson/binaryninja-bookmarks)|Josh Watson|[MIT](community/binaryninja-bookmarks/LICENSE)|A plugin that adds bookmarking functionality.|
 |[MSP430 Architecture Plugin](https://github.com/joshwatson/binaryninja-msp430)|Josh Watson|[MIT](community/binaryninja-msp430/LICENSE)|A disassembler and lifter for the MSP430 architecture.|
+|[Radare2 Linear Sweep Plugin](https://github.com/Manouchehri/binaryninja-radare2)|David Manouchehri|[BSD4](community/binaryninja-radare2/LICENSE)|Uses radare to identify extra symbols|
+|[AVR Architecture Plugin](https://github.com/cah011/binja-avr)|Carl Hurd|[MIT](community/binja-avr/LICENSE)|A disassembler for the AVR architecture.|
 |[Binjatron](https://github.com/snare/binjatron)|snare|[MIT](community/binjatron/LICENSE)|Synchronise the Binary Ninja binary view with a debugger via Voltron.|
 |[Smali Architecture Plugin](https://github.com/lucasduffey/smaliBinja_python)|Lucas Duffey|[MIT](community/smaliBinja_python/LICENSE)|Extracts dex from APK, and dissembles into Smalli bytecode.|
 
