@@ -54,16 +54,18 @@ for channel in ['official', 'community']: #because otherwise it's alphabetical
 	for plugin in os.walk(os.path.join(basedir,channel)).next()[1]:
 		try:
 			url = submodules[os.path.join('plugins', channel, plugin)]
-                        if url.endswith('.git'):
-                            url = url[:-4]
+			if url.endswith('.git'):
+				url = url[:-4]
+			authorlink = '/'.join(url.split('/')[:4])
 		except:
-                    url = 'https://github.com/Vector35/binaryninja-plugins/tree/master/plugins/{channel}/{plugin}'.format(channel = channel, plugin = plugin)
+			url = 'https://github.com/Vector35/binaryninja-plugins/tree/master/plugins/{channel}/{plugin}'.format(channel = channel, plugin = plugin)
+			authorlink = 'https://github.com/Vector35/'
 		data = json.load(open(os.path.join(basedir,channel,plugin,"plugin.json")), object_pairs_hook=OrderedDict)['plugin']
-                data['url'] = url
+		data['url'] = url
 		plugins.append(data)
-		template += '|[{name}]({url})|{author}|[{license}]({channel}/{plugin}/LICENSE)|{description}|\n'.format(name = data['name'], channel = channel,
-			url = url, plugin = plugin, author = data['author'],
-			license = data['license']['name'], description = data['description'])
+		template += '|[{name}]({url})|[{author}]({authorlink})|[{license}]({channel}/{plugin}/LICENSE)|{description}|\n'.format(name = data['name'], channel = channel,
+		            url = url, plugin = plugin, author = data['author'], authorlink = authorlink,
+		            license = data['license']['name'], description = data['description'])
 	template += "\n\n"
 	print("Writing {outputfile}".format(outputfile=index))
 	open(index, 'w').write(json.dumps(plugins, indent=4, sort_keys=True))
