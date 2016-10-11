@@ -97,7 +97,7 @@
             "architecture"
         ], 
         "url": "https://github.com/cah011/binja-avr", 
-        "version": "0.1b"
+        "version": "0.1c"
     }, 
     {
         "api": "python2", 
