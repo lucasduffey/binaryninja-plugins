@@ -66,7 +66,7 @@ for channel in ['official', 'community']: #because otherwise it's alphabetical
 			license = data['license']['name'], description = data['description'])
 	template += "\n\n"
 	print("Writing {outputfile}".format(outputfile=index))
-	open(index, 'w').write(json.dumps(plugins))
+	open(index, 'w').write(json.dumps(plugins, indent=4, sort_keys=True))
 
 print("Writing {outputfile}".format(outputfile=outputfile))
 open(outputfile, 'w').write(template)
