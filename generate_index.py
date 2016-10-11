@@ -4,6 +4,7 @@ import argparse
 import os
 import sys
 import configparser
+from collections import OrderedDict
 
 parser = argparse.ArgumentParser(description = 'Generate README.md index of all plugins')
 parser.add_argument("-f", "--force", help = 'will automatically overwrite existing README', action='store_true')
@@ -57,7 +58,7 @@ for channel in ['official', 'community']: #because otherwise it's alphabetical
                             url = url[:-4]
 		except:
                     url = 'https://github.com/Vector35/binaryninja-plugins/tree/master/plugins/{channel}/{plugin}'.format(channel = channel, plugin = plugin)
-		data = json.load(open(os.path.join(basedir,channel,plugin,"plugin.json")))['plugin']
+		data = json.load(open(os.path.join(basedir,channel,plugin,"plugin.json")), object_pairs_hook=OrderedDict)['plugin']
                 data['url'] = url
 		plugins.append(data)
 		template += '|[{name}]({url})|{author}|[{license}]({channel}/{plugin}/LICENSE)|{description}|\n'.format(name = data['name'], channel = channel,
