@@ -9,8 +9,7 @@
         }, 
         "longdescription": "This plugin enables a Binary Ninja user to bookmark addresses of interest and quickly navigate back to them at a later time. As the API for loading and saving user data to the analysis database is not available yet, the bookmarks must be manually saved and loaded to a separate file for now.\n\nTo install this plugin, navigate to your Binary Ninja plugins directory, and run\n\n```git clone https://github.com/joshwatson/binaryninja-bookmarks.git bookmarks```\n\nThen create a python file called `bookmarks.py` with the contents\n\n```import bookmarks```", 
         "minimumBinaryNinjaVersion": {
-            "dev (Commercial)": "1.0.dev-71", 
-            "dev (Personal)": "1.0.dev-71"
+            "dev": "1.0.dev-87"
         }, 
         "name": "Bookmarks", 
         "type": [
@@ -18,7 +17,7 @@
             "ui"
         ], 
         "url": "https://github.com/joshwatson/binaryninja-bookmarks", 
-        "version": "0.1b"
+        "version": "0.2b"
     }, 
     {
         "api": "python2", 
