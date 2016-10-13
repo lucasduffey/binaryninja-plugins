@@ -16,7 +16,7 @@ A [sample plugin](plugins/official/sample_plugin/) is available to demonstrate t
 
 ### Installing Plugins
 
-To install plugins, you can either clone this repository, or clone the specific plugin you are interested in and
+To install plugins, you can either clone this repository, or clone the specific plugin you are interested in into your [plugin folder](https://github.com/Vector35/binaryninja-api/tree/dev/python/examples#loading-plugins).
 
 ### Contributing Plugins
 
@@ -27,6 +27,19 @@ To install plugins, you can either clone this repository, or clone the specific 
  1. Add your plugin as a submodule: `git submodule add https://github.com/YourName/YourPlugin plugins/community/YourPlugin`
  1. Regenerate the plugin directory with `generate-index.py`
  1. Commit and issue a [pull request](/Vector35/binaryninja-plugins/pull/new/master)
+ 
+#### Required Fields
+
+To be displayed in the plugin loader, your `plugin.json` MUST have the following fields:
+
+ - `name`
+ - `author`
+ - `api`
+ - `license['name']`
+ - `description`
+ - `version`
+ 
+All other fields are optional.
 
 ## License
 
