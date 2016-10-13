@@ -16,3 +16,6 @@
 [submodule "plugins/community/binja-avr"]
 	path = plugins/community/binja-avr
 	url = https://github.com/cah011/binja-avr
+[submodule "plugins/community/x64dbgbinja"]
+	path = plugins/community/x64dbgbinja
+	url = https://github.com/x64dbg/x64dbgbinja

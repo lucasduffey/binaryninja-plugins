@@ -17,5 +17,6 @@
 |[AVR Architecture Plugin](https://github.com/cah011/binja-avr)|[Carl Hurd](https://github.com/cah011)|[MIT](community/binja-avr/LICENSE)|A disassembler for the AVR architecture.|
 |[Binjatron](https://github.com/snare/binjatron)|[snare](https://github.com/snare)|[MIT](community/binjatron/LICENSE)|Synchronise the Binary Ninja binary view with a debugger via Voltron.|
 |[Smali Architecture Plugin](https://github.com/lucasduffey/smaliBinja_python)|[Lucas Duffey](https://github.com/lucasduffey)|[MIT](community/smaliBinja_python/LICENSE)|Extracts dex from APK, and dissembles into Smalli bytecode.|
+|[x64dbgbinja](https://github.com/x64dbg/x64dbgbinja)|[x64dbg](https://github.com/x64dbg)|[MIT](community/x64dbgbinja/LICENSE)|Official x64dbg plugin for Binary Ninja.|
 
 
