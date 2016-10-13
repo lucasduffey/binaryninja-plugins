@@ -21,7 +21,7 @@ To install plugins, you can either clone this repository, or clone the specific 
 ### Contributing Plugins
 
  1. Create a new repository (Optionally, just copy it from the [sample plugin](plugins/official/sample_plugin/))
- 1. Fill out a [`plugin.json`](/Vector35/binaryninja-plugins/blob/master/plugins/official/sample_plugin/plugin.json)
+ 1. Fill out a [`plugin.json`](/plugins/official/sample_plugin/plugin.json)
  1. (Optional) Run `generate-readme.md` to update your readme and license 
  1. Fork this repository
  1. Add your plugin as a submodule: `git submodule add https://github.com/YourName/YourPlugin plugins/community/YourPlugin`
